@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AI Blog{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        nav {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--pico-muted-border-color);
+        }
+        nav a {
+            margin-right: 1rem;
+        }
+        .project {
+            background: var(--pico-card-background-color);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: var(--pico-border-radius);
+            border: 1px solid var(--pico-muted-border-color);
+        }
+        .project h3 {
+            margin-top: 0;
+        }
+        .tech {
+            font-size: 0.875rem;
+            color: var(--pico-muted-color);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <nav>
+            <a href="/" role="button" class="secondary">Home</a>
+            <a href="/projects" role="button" class="secondary">Projects</a>
+        </nav>
+        
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

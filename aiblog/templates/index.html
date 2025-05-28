@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}AI Blog - Home{% endblock %}
+
+{% block content %}
+<h1>Welcome to My AI Blog</h1>
+<p>This is a simple blog with fun little side features. Here you'll find posts about AI, programming, and various projects I'm working on.</p>
+
+<h2>Recent Posts</h2>
+{% if posts %}
+    {% for post in posts %}
+    <article>
+        <h3><a href="/post/{{ post.slug }}">{{ post.title }}</a></h3>
+        <small>{{ post.date }}</small>
+        <p>{{ post.excerpt }}</p>
+    </article>
+    {% endfor %}
+{% else %}
+    <p><em>Blog posts coming soon...</em></p>
+{% endif %}
+
+<h2>Fun Features</h2>
+<ul>
+    <li><a href="/projects">Project Portfolio</a> - See what I'm building</li>
+    <li><em>More features coming soon...</em></li>
+</ul>
+{% endblock %}
